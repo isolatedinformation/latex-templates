@@ -1,0 +1,11 @@
+\begin{thebibliography}{1}
+
+\bibitem{Article1}
+J.~Doe, ``Insert title here,'' {\em Insert journal here}, vol.~insert metadata
+  here, no.~metadata continued here, 20xx.
+
+\bibitem{Dummy1}
+J.~Doe, {\em Untitled Book}.
+\newblock Dummy Publisher, 2019.
+
+\end{thebibliography}
