@@ -1,45 +1,42 @@
 %% Preamble %%
 
-\documentclass{article}
+\documentclass[11pt,
+%twocolumn
+a4paper
+]{article}
 
 %% Packages to be used %%
 \usepackage{amsmath}
-\usepackage[a4paper, top=30mm, bottom=25mm, right=30mm, left=25mm]{geometry}
-\usepackage{qcircuit}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{fontenc}
+\usepackage[margin = 2.5cm]{geometry}
+% \usepackage{qcircuit}
 \usepackage{graphicx}
 \usepackage{lipsum}
-
+\usepackage{braket}
+\usepackage{csquotes}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[backend = biber, giveninits=true]{biblatex}
+\addbibresource{references.bib}
 %% Custom commands %%
 %% --------------- %%
 %% Empty now, fill as required %%
 
 \begin{document}
-\input{frontmatter.tex} 
 
-\section{First Section}\cite{Dummy1}
-    \lipsum[1]
-    \subsection{1st Subsection}
-        \lipsum[2]
-    \subsection{2nd Subsection}
-        \lipsum[3]
+\input{content/frontmatter.tex}
 
-
-\section{Second Section}
-    \lipsum[4]
-    \subsection{With SUb SUb section}
-        \lipsum[5]
-        \subsubsection{1st SubSubsection}
-            \lipsum[6]
-
-\section{Conclusion}
-    \lipsum[7]
+\newgeometry{twocolumn, margin = 2cm }
+\input{content/content.tex}
+\restoregeometry
 
 \newpage
 \addcontentsline{toc}{section}{References}
-\bibliographystyle{ieeetr}
-\bibliography{references}
+% \bibliographystyle{ieeetr}
+% \bibliography{references}
+\printbibliography[title=\refname]
 
-\section*{Appendix}
-\addcontentsline{toc}{section}{Appendix}
-    \lipsum[7]
+\input{content/appendix.tex}
+
 \end{document}
