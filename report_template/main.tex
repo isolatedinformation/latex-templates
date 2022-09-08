@@ -1,23 +1,27 @@
+
 \documentclass[11pt, twoside]{report}
-
-
 %% Packages to be used %%
 \usepackage{amsmath,amsfonts,amsthm}
 \usepackage[a4paper, top=30mm, bottom=25mm, right=30mm, left=25mm]{geometry}
-\usepackage{qcircuit}
+% \usepackage{qcircuit}
 \usepackage{graphicx}
+\usepackage[english]{babel}
 \usepackage{lipsum}
 \usepackage{xcolor}
 \usepackage{titling}
-\usepackage{cite}
+% \usepackage{cite}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage{braket}
+\usepackage{csquotes}
 \usepackage[textwidth = 20mm]{todonotes}
+% \usepackage{svg}
+\usepackage[backend=biber, giveninits=true]{biblatex}
+% \SetCiteCommand{\autocite}
+\addbibresource{references/references.bib}
 
-
-
+\usepackage[colorlinks=true]{hyperref}
 %% Custom commands %%
 %% --------------- %%
 \renewcommand{\bibname}{References}  %% Command to display References as heading instead of bibliography
@@ -26,32 +30,38 @@
 
 
 \begin{document}
-    \input{frontmatter.tex}
 
-    \newpage
-    \tableofcontents
-    \listoftodos\todo{remove todo list when doc is complete}
+\begin{titlepage}
+    \title{Dummy Title}
+    \author{Dummy author}
+    \date{\today}
+\end{titlepage}
+\maketitle
+% \input{frontmatter/frontmatter.tex}
 
-    %% Add lline \input{chapters/chaptername.tex} to add chapter to the tex file%%
-    \input{chapters/chapterone.tex}
-    \input{chapters/chaptertwo.tex}
+\newpage
+\tableofcontents
+\listoftodos\todo{remove todo list when doc is complete}
+
+%% Add lline \input{chapters/chaptername.tex} to add chapter to the tex file%%
+\input{chapters/chapterone.tex}
+\input{chapters/chaptertwo.tex}
 
 
-    % \todo{Add references to sections}
-    % \todo{Add refernces to figures}
-    % \todo{Make refernce naming nomenclature consistent}
+% \todo{Add references to sections}
+% \todo{Add refernces to figures}
+% \todo{Make refernce naming nomenclature consistent}
 
-    % References%
-    \newpage
-    \newgeometry{top=10mm, bottom=20mm, right=25mm, left=25mm}
-    \addcontentsline{toc}{chapter}{References}
-    \bibliographystyle{ieeetr}
-    \bibliography{references}
-    
-    
-    \restoregeometry
-    \newpage
-    \input{appendix.tex}
+% References%
+\newpage
+\newgeometry{top=10mm, bottom=20mm, right=25mm, left=25mm}
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title=References]
+
+\restoregeometry
+\newpage
+
+\input{frontmatter/appendix.tex}
 
 
 \end{document}
